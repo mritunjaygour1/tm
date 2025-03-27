@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"regexp"
@@ -42,7 +43,7 @@ func main() {
 	}
 
 	router.SetupRouter(r, taskService)
-
+	fmt.Println("test push trigger")
 	log.Fatal(http.ListenAndServe(":8080", r))
 }
 
