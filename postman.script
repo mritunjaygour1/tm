@@ -1,0 +1,29 @@
+Public
+Health check: curl --location 'localhost:8080/activity/healthz'
+
+Fetch All: curl --location 'localhost:8080/activity/tasks'
+
+Protected
+Create One: curl --location 'localhost:8080/tasks/' \
+--header 'Authorization: Bearer asdf.qwer.zxcv' \
+--header 'Content-Type: application/json' \
+--data '{
+    "title":"Task-2",
+    "description":"task description 2",
+    "status":"pending"
+}'
+
+Get By Id: curl --location 'localhost:8080/tasks/01947ffb-5ffb-797a-bf2b-317125876258' \
+--header 'Authorization: Bearer asdf.qwer.zxcv'
+
+Update By Id: curl --location --request PUT 'localhost:8080/tasks/01947ffb-5ffb-797a-bf2b-317125876258' \
+--header 'Authorization: Bearer asdf.qwer.zxcv' \
+--header 'Content-Type: application/json' \
+--data '{
+    "title":"Task-4",
+    "description":"task description 4",
+    "status":"pending"
+}'
+
+Delete By Id: curl --location --request DELETE 'localhost:8080/tasks/01947ffb-5851-797a-9415-fb125b657bc0' \
+--header 'Authorization: Bearer asdf.qwer.zxcv'
